@@ -1,0 +1,51 @@
+{
+	"name": "Go",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			// Update the VARIANT arg to pick a version of Go: latest, 1.16, 1.15
+			"VARIANT": "latest",
+			// Options
+			"INSTALL_NODE": "false",
+			"NODE_VERSION": "lts/*"
+		}
+	},
+	"runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"editor.wordWrap": "on",
+		"go.toolsManagement.checkForUpdates": "off",
+		"go.useLanguageServer": true,
+		"go.gopath": "/go",
+		"go.goroot": "/usr/local/go",
+		"go.lintTool": "golangci-lint",
+		"go.lintOnSave": "workspace",
+		"go.formatTool": "goimports",
+		"go.useCodeSnippetsOnFunctionSuggest": true,
+		"[go]":{
+			"editor.defaultFormatter": "golang.go",
+			"editor.formatOnSave": true,
+			"editor.minimap.enabled": true,
+		},
+		"explorer.confirmDelete": false,
+		"code-runner.runInTerminal": true,
+	},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"golang.Go",
+		"golang.go-nightly",
+		"ivory-lab.jenkinsfile-support",
+	],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "go version",
+
+	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode"
+}
