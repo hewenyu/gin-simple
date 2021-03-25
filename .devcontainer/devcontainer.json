@@ -29,6 +29,10 @@
 			"editor.formatOnSave": true,
 			"editor.minimap.enabled": true,
 		},
+		"gopls": {
+			"usePlaceholders": true, // add parameter placeholders when completing a function
+			"wantCompletionDocumentation": true // for documentation in completion items
+		},
 		"explorer.confirmDelete": false,
 		"code-runner.runInTerminal": true,
 	},

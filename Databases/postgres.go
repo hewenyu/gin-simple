@@ -31,7 +31,7 @@ func init() {
 
 	SetupDatabase(DB)
 
-	return
+	// return
 }
 
 /*
@@ -46,7 +46,7 @@ func OpenPG(dsn string) (db *gorm.DB) {
 	}), &gorm.Config{})
 
 	if err != nil {
-		// config.BaseLog.Fatalf("数据库链接失败", err.Error())
+		fmt.Print("hello")
 	}
 
 	// config.BaseLog.Info("数据库初始化完成")
@@ -64,7 +64,10 @@ func ResetDatabase(db *gorm.DB) {
 cleanDatabase 删除表
 */
 func CleanDatabase(db *gorm.DB) {
-	db.Migrator().DropTable(ModelWithHistory...)
+	err := db.Migrator().DropTable(ModelWithHistory...)
+	if err != nil {
+		fmt.Println(err.Error())
+	}
 }
 
 /*
@@ -74,5 +77,9 @@ func SetupDatabase(db *gorm.DB) {
 	db.Exec("create extension IF NOT EXISTS hstore;")
 	// 为了使用uuid
 	db.Exec("create extension IF NOT EXISTS \"uuid-ossp\"")
-	db.AutoMigrate(ModelWithHistory...)
+	err := db.AutoMigrate(ModelWithHistory...)
+
+	if err != nil {
+		fmt.Println(err.Error())
+	}
 }

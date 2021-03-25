@@ -16,6 +16,7 @@ func main() {
 	err := r.Run()
 	if err != nil {
 		fmt.Println(err.Error())
+		fmt.Println("test")
 	}
 	// listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
