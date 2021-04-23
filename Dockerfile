@@ -34,6 +34,6 @@ ENV POSTGRES_HOST="localhost" \
 # 拷贝可执行文件
 COPY --from=builder  /workspace/server /workspace/
 
-EXPOSE 8888
+EXPOSE 8080
 
 CMD ["./server"]
