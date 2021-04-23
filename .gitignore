@@ -17,4 +17,4 @@
 **/.vscode
 # .devcontainer/
 
-_debug_bin
+*_bin
