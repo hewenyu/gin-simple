@@ -36,6 +36,8 @@ func ECBDecrypter(connext, key string) (ciphertext []byte, err error) {
 	// CryptBlocks can work in-place if the two arguments are the same.
 	mode.CryptBlocks(ciphertext, ciphertext)
 
+	ciphertext = PKCS5UnPadding(ciphertext)
+
 	return
 }
 
