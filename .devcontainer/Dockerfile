@@ -12,6 +12,7 @@ ARG INSTALL_NODE="true"
 ARG NODE_VERSION="lts/*"
 RUN if [ "${INSTALL_NODE}" = "true" ]; then su vscode -c "source /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
 
+export GIN_MODE=release
 # 安装gopls
 # RUN go get golang.org/x/tools/gopls@latest
 # EXPOSE 9000

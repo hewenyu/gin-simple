@@ -27,8 +27,8 @@ func Routers() *gin.Engine {
 	// 需要验证的路由
 	PrivateGroup := DefultRouter.Group("/api")
 	PrivateGroup.Use(Middlewares.JWTAuth())
-	// {
-	// 	Router.InitAuthRouter(PrivateGroup) // 测试接口
-	// }
+	{
+		// Router.InitAuthRouter(PrivateGroup) // 测试接口
+	}
 	return DefultRouter
 }

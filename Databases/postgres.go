@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/hewenyu/gin-simple/logger"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -46,7 +47,7 @@ func OpenPG(dsn string) (db *gorm.DB) {
 	}), &gorm.Config{})
 
 	if err != nil {
-		fmt.Print("hello")
+		logger.Error(err.Error())
 	}
 	return
 }
@@ -63,7 +64,7 @@ cleanDatabase 删除表
 func CleanDatabase(db *gorm.DB) {
 	err := db.Migrator().DropTable(ModelWithHistory...)
 	if err != nil {
-		fmt.Println(err.Error())
+		logger.Error(err.Error())
 	}
 }
 
@@ -77,6 +78,6 @@ func SetupDatabase(db *gorm.DB) {
 	err := db.AutoMigrate(ModelWithHistory...)
 
 	if err != nil {
-		fmt.Println(err.Error())
+		logger.Error(err.Error())
 	}
 }
