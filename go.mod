@@ -13,6 +13,7 @@ require (
 	github.com/ugorji/go v1.2.4 // indirect
 	golang.org/x/crypto v0.0.0-20210322153248-0c34fe9e7dc2 // indirect
 	golang.org/x/sys v0.0.0-20210324051608-47abb6519492 // indirect
+	golang.org/x/tools/gopls v0.6.10 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gorm.io/driver/postgres v1.0.8
 	gorm.io/gorm v1.20.12

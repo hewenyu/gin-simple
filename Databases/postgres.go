@@ -48,9 +48,6 @@ func OpenPG(dsn string) (db *gorm.DB) {
 	if err != nil {
 		fmt.Print("hello")
 	}
-
-	// config.BaseLog.Info("数据库初始化完成")
-
 	return
 }
 
