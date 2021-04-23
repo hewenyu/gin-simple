@@ -18,3 +18,16 @@ main.go(在main中关闭数据库) - router(Middlewares) - Controllers - Service
 
 ## 接口文档初始化
 
+go get -u github.com/swaggo/swag/cmd/swag
+
+
+swag init
+
+
+接口 文档地址 : http://127.0.0.1:8888/swagger/index.html
+
+fix bug 如果有问题的话改成 go get -u github.com/swaggo/swag/cmd/swag@v1.6.7
+
+## 编译打包
+
+go build -o server .
