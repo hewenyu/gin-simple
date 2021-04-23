@@ -13,13 +13,13 @@ import (
 var level zapcore.Level
 
 const (
-	Director      = "log"
+	Director      = "logs"
 	LogLevel      = "info"
 	ShowLine      = true
 	StacktraceKey = "stacktrace"
 	EncodeLevel   = "LowercaseLevelEncoder"
 	Format        = "console"
-	LinkName      = "latest_log"
+	LinkName      = "latest.log"
 	InConsole     = true
 	Prefix        = "[YUEBAN]"
 )

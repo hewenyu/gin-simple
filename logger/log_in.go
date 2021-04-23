@@ -2,12 +2,7 @@ package logger
 
 import "go.uber.org/zap"
 
-var loggers *zap.Logger
-
-func Init() {
-	// 日志初始化
-	loggers = Zap()
-}
+var loggers = Zap()
 
 func Debug(msg string, fields ...zap.Field) {
 	loggers.Debug(msg, fields...)

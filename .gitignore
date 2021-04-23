@@ -4,6 +4,7 @@
 *.dll
 *.so
 *.dylib
+*.log
 
 # Test binary, built with `go test -c`
 *.test
@@ -16,5 +17,7 @@
 
 **/.vscode
 # .devcontainer/
+**/logs
+
 
 *_bin
