@@ -2,7 +2,7 @@ package Router
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/hewenyu/gin-simple/Api/hello_demo"
+	"github.com/hewenyu/gin-simple/Controllers/hello_demo"
 )
 
 // GetUser
