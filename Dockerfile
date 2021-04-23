@@ -32,7 +32,7 @@ ENV POSTGRES_HOST="localhost" \
 
 
 # 拷贝可执行文件
-COPY --from=builder  /workspace/gin-simple /workspace/
+COPY --from=builder  /workspace/server /workspace/
 
 EXPOSE 8888
 
