@@ -13,8 +13,8 @@ type Response struct {
 }
 
 const (
-	ERROR   = 400
-	SUCCESS = 200
+	ERROR   = 40000
+	SUCCESS = 20000
 )
 
 func Result(code int, data interface{}, msg string, c *gin.Context) {
